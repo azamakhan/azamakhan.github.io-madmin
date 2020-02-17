@@ -273,9 +273,9 @@
         <div class="input-field">
           <select>
             <option value="" disabled selected>Select Option</option>
-            <option value="1" disabled selected>Web Development</option>
-            <option value="2" disabled selected>Design</option>
-            <option value="3" disabled selected>Gadgets</option>
+            <option value="1">Web Development</option>
+            <option value="2">Design</option>
+            <option value="3">Gadgets</option>
           </select>
           <label>Category</label>
         </div>
@@ -283,6 +283,50 @@
           <textarea name="body" id="body" class="materialize-textarea">
           </textarea>
           <label for="body">Body</label>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <a href="!#" class="modal-action modal-close btn blue white-text">Submit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add Category Modal-->
+  <div id="category-modal" class="modal">
+    <div class="modal-content">
+      <h4>Add Category</h4>
+      <form>
+        <div class="input-field">
+          <input type="text" id="title">
+          <label for="title">Title</label>
+        </div>
+      </form>
+      <div class="modal-footer">
+        <a href="!#" class="modal-action modal-close btn blue white-text">Submit</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- Add User Modal-->
+  <div id="user-modal" class="modal">
+    <div class="modal-content">
+      <h4>Add User</h4>
+      <form>
+        <div class="input-field">
+          <input type="text" id="title">
+          <label for="name">Name</label>
+        </div>
+        <div class="input-field">
+          <input type="email" id="email">
+          <label for="email">Email</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="password">
+          <label for="password">Password</label>
+        </div>
+        <div class="input-field">
+          <input type="password" id="password2">
+          <label for="password2">Confirm Password</label>
         </div>
       </form>
       <div class="modal-footer">
@@ -311,6 +355,8 @@
   <script type="text/javascript" src="js/materialize.min.js"></script>
   <script src="https://canvasjs.com/assets/script/canvasjs.min.js"></script>
   <script src="js/chart.js"></script>
+  <script src="https://cdn.ckeditor.com/4.13.1/standard/ckeditor.js"></script>
+
   <script>
     //Hide Sections
     $('.section').hide();
@@ -379,6 +425,8 @@
           Materialize.toast('Todo Removed', 3000);
           e.preventDefault();
         });
+
+        CKEDITOR.replace('body');
 
       });
     }, );
